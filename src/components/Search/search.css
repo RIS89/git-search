@@ -1,0 +1,33 @@
+.search {
+  display: flex;
+  padding: 16px;
+  background: #fff;
+  border-radius: 15px;
+  align-items: center;
+  margin: 30px 0;
+  box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
+}
+
+.svg {
+  width: 25px;
+  height: 25px;
+}
+
+input {
+  width: 100%;
+  font-size: 24px;
+  outline: none;
+  border: none;
+  padding: 0 5px;
+  margin: 0 15px;
+}
+
+button {
+  width: 96px;
+  height: 48px;
+  background: #0079ff;
+  border-radius: 10px;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+}
