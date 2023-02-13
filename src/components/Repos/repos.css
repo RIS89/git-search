@@ -1,0 +1,15 @@
+.repos {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 30px;
+  border-radius: 15px;
+  background: #fff;
+  margin-bottom: 10px;
+  overflow-y: auto;
+  height: 160px;
+}
+
+.repos a {
+  text-decoration: none;
+  color: rgb(5, 5, 134);
+}

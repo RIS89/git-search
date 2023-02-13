@@ -1,7 +1,6 @@
 import React from "react";
 import "./app.css";
 import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
 import Main from "./components/Main/Main";
 
 const App = () => {
@@ -9,7 +8,6 @@ const App = () => {
     <div className="app">
       <Header />
       <Main />
-      <Footer />
     </div>
   );
 };

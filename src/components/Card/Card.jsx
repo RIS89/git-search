@@ -6,7 +6,7 @@ import Link from "../../img/link.svg";
 import Twitter from "../../img/twitter.svg";
 import Building from "../../img/building.svg";
 
-const Card = ({ userData }) => {
+const Card = ({ userData, getDataRepos }) => {
   return (
     <div className={styles.card}>
       <div className={styles.avatar}>
@@ -16,7 +16,12 @@ const Card = ({ userData }) => {
         <div className={styles.information}>
           <div className={styles.fio}>
             {userData.name !== null ? <h2>{userData.name}</h2> : <div />}
-            <h3>{`@${userData.login}`}</h3>
+            <h3>
+              <a
+                target="_blank"
+                href={`https://github.com/${userData.login}`}
+              >{`@${userData.login}`}</a>
+            </h3>
           </div>
 
           <span className={styles.join}>
@@ -30,7 +35,9 @@ const Card = ({ userData }) => {
         <div className={styles.follow}>
           <div className={styles.repos}>
             <p>Repos</p>
-            <h3>{userData.public_repos}</h3>
+            <h3 onClick={() => getDataRepos(userData.repos_url)}>
+              {userData.public_repos}
+            </h3>
           </div>
           <div className={styles.following}>
             <p>Following</p>
@@ -42,34 +49,34 @@ const Card = ({ userData }) => {
           </div>
         </div>
         <div className={styles.allinfo}>
-          <div className={styles.one}>
-            {userData.location !== null && (
-              <div className={styles.malaga}>
-                <img src={Location} alt="" />
-                <span>{userData.location}</span>
-              </div>
-            )}
-            {userData.blog !== null && userData.blog !== "" && (
-              <div className={styles.link}>
-                <img src={Link} alt="" />
-                <span>{userData.blog}</span>
-              </div>
-            )}
-          </div>
-          <div className={styles.two}>
-            {userData.twitter_username !== null && (
-              <div className={styles.twitter}>
-                <img src={Twitter} alt="" />
-                <span>{userData.twitter_username}</span>
-              </div>
-            )}
-            {userData.company !== null && (
-              <div className={styles.building}>
-                <img src={Building} alt="" />
-                <span>{userData.company}</span>
-              </div>
-            )}
-          </div>
+          {userData.location !== null && (
+            <div className={styles.malaga}>
+              <img src={Location} alt="" />
+              <span>{userData.location}</span>
+            </div>
+          )}
+          {userData.blog !== null && userData.blog !== "" && (
+            <div className={styles.link}>
+              <img src={Link} alt="" />
+              <span>
+                <a target="_blank" href={`${userData.blog}`}>
+                  {userData.blog}
+                </a>
+              </span>
+            </div>
+          )}
+          {userData.twitter_username !== null && (
+            <div className={styles.twitter}>
+              <img src={Twitter} alt="" />
+              <span>{userData.twitter_username}</span>
+            </div>
+          )}
+          {userData.company !== null && (
+            <div className={styles.building}>
+              <img src={Building} alt="" />
+              <span>{userData.company}</span>
+            </div>
+          )}
         </div>
       </div>
     </div>

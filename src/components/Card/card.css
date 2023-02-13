@@ -5,6 +5,7 @@
   box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
   border-radius: 15px;
   padding: 0 0 30px 0;
+  margin-bottom: 10px;
 }
 
 .avatar img {
@@ -32,6 +33,11 @@
 .fio {
   display: flex;
   flex-direction: column;
+}
+
+.fio a {
+  text-decoration: none;
+  color: #67afff;
 }
 
 .fio h2 {
@@ -85,13 +91,8 @@
 .allinfo {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   padding-left: 32px;
-}
-
-.one {
-  display: flex;
-  flex-direction: column;
-  width: 50%;
   gap: 15px;
 }
 
@@ -101,17 +102,15 @@
 .building {
   display: flex;
   gap: 0 15px;
+  width: 40%;
 }
 
-.two {
-  display: flex;
-  flex-direction: column;
-  width: 50%;
-  gap: 15px;
+.link a {
+  text-decoration: none;
+  color: #000;
 }
 
-.one img,
-.two img {
+.allinfo img {
   width: 20px;
   height: 20px;
 }
